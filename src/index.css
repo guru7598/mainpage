@@ -1,8 +1,35 @@
+/* index.css */
 
-body {
+/* Reset some default browser styles */
+* {
   margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f9fbfd;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Apply a clean, modern font */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6fa; /* light blue-gray background */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #1a237e; /* deep blue */
+  margin-bottom: 10px;
+}
+
+/* Layout helper for root */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

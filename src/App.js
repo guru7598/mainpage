@@ -1,31 +1,20 @@
-import React, { useState } from "react";
-import Navbar from "./components/Navbar";
-import FormSection from "./components/FormSection";
-import PreviewSection from "./components/PreviewSection";
+import React from "react";
+import PortfolioBuilder from "./components/PortfolioBuilder";
 import "./App.css";
 
 function App() {
-  const [formData, setFormData] = useState({
-    role: "",
-    name: "",
-    about: "",
-    education: "",
-    projects: "",
-    internships: "",
-    experience: "",
-    publications: "",
-    certifications: "",
-    email: "",
-    phone: "",
-  });
-
   return (
-    <div className="app-container">
-      <Navbar />
-      <div className="main-content">
-        <FormSection formData={formData} setFormData={setFormData} />
-        <PreviewSection formData={formData} />
-      </div>
+    <div>
+      <header className="navbar">
+        <h1>Portfolio Builder</h1>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Education</a>
+          <a href="#">Contact</a>
+        </nav>
+      </header>
+      <PortfolioBuilder />
     </div>
   );
 }
