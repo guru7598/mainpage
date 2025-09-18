@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #123c8d;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.navbar nav a:hover {
+  text-decoration: underline;
+}
+
+/* Layout */
+.builder-container {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+/* Left form */
+.left-pane {
+  flex: 1;
+  background: #f0f6ff;
+  padding: 20px;
+}
+
+.left-pane h2 {
+  color: #123c8d;
+}
+
+.left-pane label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.left-pane input,
+.left-pane textarea,
+.left-pane select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Right preview */
+.right-pane {
+  flex: 2;
+  background: #fff;
+  padding: 30px;
+}
+
+.right-pane h1 {
+  color: #123c8d;
+  margin-bottom: 20px;
+}
+
+.right-pane h3 {
+  margin-top: 20px;
+  color: #333;
+}
