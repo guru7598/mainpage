@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Preview section */
+.preview-section {
+  @apply flex-[2] p-10 bg-amber-50 overflow-y-auto 
+          text-center;
+}
+
+/* Heading 1 inside preview */
+/* .preview-section h1 {
+  @apply text-8xl font-bold text-blue-900;
+} */
+
+/* Heading 3 inside preview */
+.preview-section h3 {
+  @apply mt-5 text-2xl text-gray-800;
+}
+
+/* 
+.preview-section {
+  flex: 2;
+  padding: 40px;
+  background: white;
+  overflow-y: auto;
+
+  /* Center la align panna */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center; 
+}
+
+
+
+.preview-section h1 {
+  color: #1e3a8a;
+}
+
+.preview-section h3 {
+  margin-top: 20px;
+  color: #333;
+} */ 
