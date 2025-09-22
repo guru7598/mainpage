@@ -4,24 +4,33 @@ import Preview from "./Preview";
 import "./PortfolioBuilder.css";
 
 const PortfolioBuilder = () => {
-  const [formData, setFormData] = useState({
+  const [data, setData] = useState({
     name: "",
+    specification: "",
     about: "",
-    education: "",
-    email: "",
-    phone: "",
-    linkedin: "",
-    github: "",
-    sections: [] // dynamic sections
+    contact: {
+      phone: "",
+      email: "",
+      extra: [], // GitHub, LinkedIn etc dynamic
+    },
+    education: {
+      schooling: "",
+      ug: "",
+      extra: [], // PG, Research etc dynamic
+    },
+    skills: [],
+    certifications: [],
+    languages: [],
+    customSections: [],
   });
 
   return (
     <div className="portfolio-builder">
-      {/* Left Side Form */}
-      <DynamicForm formData={formData} setFormData={setFormData} />
+      {/* Left side Form */}
+      <DynamicForm data={data} setData={setData} />
 
-      {/* Right Side Preview */}
-      <Preview formData={formData} />
+      {/* Right side Preview */}
+      <Preview data={data} />
     </div>
   );
 };

@@ -1,101 +1,119 @@
-/* PortfolioBuilder Layout */
 .portfolio-builder {
   display: flex;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-  background: #f4f7fb;
+  gap: 20px;
+  padding: 20px;
 }
 
-/* Left side form */
+/* Form (left side) */
 .form-section {
-  width: 35%;
-  background: #eaf0fb;
+  flex: 1;
+  background: #f0f4ff;
   padding: 20px;
-  border-right: 2px solid #d0d7e6;
+  border-radius: 8px;
   overflow-y: auto;
+  max-height: 90vh;
 }
 
 .form-section h2 {
-  color: #0d3b85;
-  font-size: 22px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  color: #0d1b66;
 }
 
 .form-section label {
-  display: block;
-  margin-top: 12px;
   font-weight: bold;
-  color: #333;
+  display: block;
+  margin-top: 10px;
 }
 
 .form-section input,
 .form-section textarea {
   width: 100%;
-  padding: 10px;
-  margin-top: 6px;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
+  border-radius: 5px;
 }
 
-.form-section textarea {
-  resize: vertical;
-  min-height: 70px;
-}
-
-.form-section button {
-  margin-top: 12px;
-  padding: 10px 14px;
+.add-btn {
+  background: #0d1b66;
+  color: #fff;
   border: none;
-  border-radius: 6px;
-  background-color: #0d6efd;
-  color: white;
-  font-size: 14px;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.form-section button:hover {
-  background-color: #0b5ed7;
+.dynamic-row {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
 }
 
-/* Custom section box */
-.custom-section {
-  background: #ffffff;
-  padding: 12px;
-  margin-top: 12px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+.dynamic-row button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.custom-section input,
-.custom-section textarea {
-  margin-bottom: 10px;
-}
-
-/* Right side preview */
-.preview-section {
+/* Preview (right side) */
+.preview {
   flex: 1;
-  padding: 40px;
-  background: #ffffff;
+  background: #f8fbff;
+  padding: 20px;
+  border-radius: 8px;
   overflow-y: auto;
+  max-height: 90vh;
 }
 
-.preview-section h1 {
+.preview-content {
+  text-align: left;
+}
+
+.preview-content .name {
+  color: #0d1b66;
   font-size: 28px;
-  font-weight: bold;
-  color: #0d3b85;
-  margin-bottom: 16px;
+  margin-bottom: 5px;
 }
 
+.preview-content .spec {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.preview-content h3 {
+  margin-top: 15px;
+  color: #0d1b66;
+  font-size: 18px;
+}
+
+.preview-content p,
+.preview-content li {
+  font-size: 15px;
+  margin: 3px 0;
+}
+.contact-list p {
+  margin: 4px 0;
+  font-size: 14px;
+}
 .preview-section h3 {
-  font-size: 20px;
-  margin-top: 20px;
+  margin-top: 18px;
   margin-bottom: 6px;
-  color: #0d3b85;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a237e;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 3px;
 }
 
 .preview-section p {
+  margin: 3px 0;
   font-size: 14px;
   color: #333;
-  line-height: 1.6;
 }
+
