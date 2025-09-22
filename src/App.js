@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <header className="navbar">
-        <h1>Portfolio Builder</h1>
+        <h1 className="head1">FWT Portfolio Builder</h1>
         <nav>
           <a href="#">Home</a>
           <a href="#">About</a>
