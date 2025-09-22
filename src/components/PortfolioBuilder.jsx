@@ -5,6 +5,7 @@ import "./PortfolioBuilder.css";
 
 const PortfolioBuilder = () => {
   const [data, setData] = useState({
+    profilePicture: "", // New field for profile picture URL
     name: "",
     specification: "",
     about: "",

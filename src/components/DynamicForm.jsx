@@ -64,6 +64,15 @@ const DynamicForm = ({ data, setData }) => {
     <div className="form-section">
       <h2>Portfolio Builder</h2>
 
+      {/* Profile Picture */}
+      <label>Profile Picture URL</label>
+      <input
+        type="url"
+        placeholder="https://example.com/your-photo.jpg"
+        value={data.profilePicture}
+        onChange={(e) => setData({ ...data, profilePicture: e.target.value })}
+      />
+
       {/* Name */}
       <label>Name</label>
       <input
