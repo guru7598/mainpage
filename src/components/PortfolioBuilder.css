@@ -447,6 +447,160 @@ body {
   animation: fadeIn 0.6s ease-out;
 }
 
+/* Education Section Specific Styles */
+.education-subsection {
+  background: rgba(102, 126, 234, 0.02);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.education-subsection h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.schooling-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e0);
+  color: #4a5568;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+.grade-fields {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 16px 0;
+  border: 1px solid #e2e8f0;
+}
+
+.grade-fields h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 16px;
+}
+
+.ug-fields {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 16px 0;
+  border: 1px solid #e2e8f0;
+}
+
+.custom-education {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 16px 0;
+  border: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.remove-btn {
+  background: linear-gradient(135deg, #e53e3e, #c53030);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+}
+
+/* Select Dropdown Styling */
+.form-section select {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+
+.form-section select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+  background: white;
+}
+
+.form-section select:hover {
+  border-color: #a0aec0;
+}
+
+/* Preview Education Items */
+.education-section {
+  margin: 16px 0;
+}
+
+.education-item {
+  background: rgba(102, 126, 234, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 16px 0;
+  border-left: 4px solid #667eea;
+}
+
+.education-item h4 {
+  color: #2d3748;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.education-item p {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #4a5568;
+}
+
+.education-item p strong {
+  color: #2d3748;
+  font-weight: 600;
+}
+
 /* Focus and Hover States */
 .form-section input:hover,
 .form-section textarea:hover {

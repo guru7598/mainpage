@@ -41,27 +41,79 @@ const Preview = ({ data }) => {
 
         <h3>Contact</h3>
         <div className="contact-list">
-          {data.contact.phone && <p>Phone: {data.contact.phone}</p>}
-          {data.contact.email && <p>Email: {data.contact.email}</p>}
-          {data.contact.extra.map(
+          {data.contact?.phone && <p>Phone: {data.contact.phone}</p>}
+          {data.contact?.email && <p>Email: {data.contact.email}</p>}
+          {data.contact?.extra?.map(
             (c, i) => c && <p key={i}>{c}</p>
           )}
         </div>
 
-        {/* Education Section */}
-        {(data.education.schooling || data.education.ug || data.education.extra.length > 0) && (
+        {/* Enhanced Education Section */}
+        {(data.education?.schooling || data.education?.ug || data.education?.custom) && (
           <div>
             <h3>Education</h3>
-            {data.education.schooling && <p>Schooling: {data.education.schooling}</p>}
-            {data.education.ug && <p>UG: {data.education.ug}</p>}
-            {data.education.extra.map(
-              (edu, i) => edu && <p key={i}>{edu}</p>
+            
+            {/* Schooling Display */}
+            {data.education?.schooling && (
+              <div className="education-section">
+                {data.education.schooling.tenth && (
+                  <div className="education-item">
+                    <h4>10th Grade</h4>
+                    <p><strong>School:</strong> {data.education.schooling.tenth.schoolName}</p>
+                    <p><strong>Percentage:</strong> {data.education.schooling.tenth.percentage}</p>
+                    <p><strong>Year:</strong> {data.education.schooling.tenth.yearOfPassing}</p>
+                  </div>
+                )}
+                
+                {data.education.schooling.twelfth && (
+                  <div className="education-item">
+                    <h4>12th Grade</h4>
+                    <p><strong>School:</strong> {data.education.schooling.twelfth.schoolName}</p>
+                    <p><strong>Percentage:</strong> {data.education.schooling.twelfth.percentage}</p>
+                    <p><strong>Year:</strong> {data.education.schooling.twelfth.yearOfPassing}</p>
+                  </div>
+                )}
+              </div>
             )}
+
+            {/* UG Display */}
+            {data.education?.ug?.degree && (
+              <div className="education-item">
+                <h4>Undergraduate</h4>
+                <p><strong>Degree:</strong> {data.education.ug.degree}</p>
+                {data.education.ug.major && (
+                  <p><strong>Major:</strong> {data.education.ug.major}</p>
+                )}
+                {data.education.ug.collegeName && (
+                  <p><strong>College:</strong> {data.education.ug.collegeName}</p>
+                )}
+                {data.education.ug.percentage && (
+                  <p><strong>Percentage:</strong> {data.education.ug.percentage}</p>
+                )}
+                {data.education.ug.yearOfPassing && (
+                  <p><strong>Year:</strong> {data.education.ug.yearOfPassing}</p>
+                )}
+              </div>
+            )}
+
+            {/* Custom Education Display */}
+            {data.education?.custom?.map((edu, index) => (
+              edu.degree && (
+                <div key={index} className="education-item">
+                  <h4>Additional Education {index + 1}</h4>
+                  <p><strong>Degree:</strong> {edu.degree}</p>
+                  {edu.major && <p><strong>Major:</strong> {edu.major}</p>}
+                  {edu.collegeName && <p><strong>Institution:</strong> {edu.collegeName}</p>}
+                  {edu.percentage && <p><strong>Percentage:</strong> {edu.percentage}</p>}
+                  {edu.yearOfPassing && <p><strong>Year:</strong> {edu.yearOfPassing}</p>}
+                </div>
+              )
+            ))}
           </div>
         )}
 
         {/* Skills Section */}
-        {(data.skills.length > 0) && (
+        {(data.skills?.length > 0) && (
           <div>
             <h3>Skills</h3>
             {data.skills.map(
@@ -71,7 +123,7 @@ const Preview = ({ data }) => {
         )}
 
         {/* Certifications Section */}
-        {(data.certifications.length > 0) && (
+        {(data.certifications?.length > 0) && (
           <div>
             <h3>Certifications</h3>
             {data.certifications.map(
@@ -81,7 +133,7 @@ const Preview = ({ data }) => {
         )}
 
         {/* Languages Section */}
-        {(data.languages.length > 0) && (
+        {(data.languages?.length > 0) && (
           <div>
             <h3>Languages</h3>
             {data.languages.map(
@@ -91,8 +143,8 @@ const Preview = ({ data }) => {
         )}
 
         {/* Custom Sections */}
-        {data.customSections.map((section, idx) => (
-          section.title && section.items.length > 0 && (
+        {data.customSections?.map((section, idx) => (
+          section.title && section.items?.length > 0 && (
             <div key={idx}>
               <h3>{section.title}</h3>
               {section.items.map(

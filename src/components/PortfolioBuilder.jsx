@@ -5,19 +5,26 @@ import "./PortfolioBuilder.css";
 
 const PortfolioBuilder = () => {
   const [data, setData] = useState({
-    profilePicture: "", // New field for profile picture URL
+    profilePicture: "",
     name: "",
     specification: "",
     about: "",
     contact: {
       phone: "",
       email: "",
-      extra: [], // GitHub, LinkedIn etc dynamic
+      extra: [],
     },
     education: {
-      schooling: "",
-      ug: "",
-      extra: [], // PG, Research etc dynamic
+      schooling: {
+        // tenth: { schoolName: "", percentage: "", yearOfPassing: "" }
+        // twelfth: { schoolName: "", percentage: "", yearOfPassing: "" }
+      },
+      ug: {
+        // degree: "", major: "", collegeName: "", percentage: "", yearOfPassing: ""
+      },
+      custom: [
+        // { degree: "", major: "", collegeName: "", percentage: "", yearOfPassing: "" }
+      ]
     },
     skills: [],
     certifications: [],
