@@ -568,7 +568,156 @@ body {
   border-color: #a0aec0;
 }
 
-/* Preview Education Items */
+/* File Upload Section Styles */
+.file-upload-section {
+  margin-bottom: 24px;
+}
+
+.upload-options {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.url-option {
+  flex: 1;
+  min-width: 250px;
+}
+
+.or-divider {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 0 8px;
+  flex-shrink: 0;
+}
+
+.file-option {
+  flex-shrink: 0;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-upload-btn {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  text-align: center;
+  min-width: 140px;
+  white-space: nowrap;
+}
+
+.file-upload-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(72, 187, 120, 0.4);
+}
+
+/* Responsive adjustments for upload options */
+@media (max-width: 768px) {
+  .upload-options {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .url-option {
+    min-width: unset;
+  }
+  
+  .or-divider {
+    text-align: center;
+    padding: 8px 0;
+  }
+  
+  .file-upload-btn {
+    width: 100%;
+  }
+}
+
+/* Certification Specific Styles */
+.certification-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: flex-start;
+}
+
+.cert-content {
+  flex: 1;
+}
+
+.file-display {
+  background: rgba(72, 187, 120, 0.1);
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid rgba(72, 187, 120, 0.2);
+}
+
+.file-name {
+  color: #2f855a;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.add-certification-options {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.file-upload-wrapper {
+  position: relative;
+}
+
+/* Preview Certification File Styles */
+.certification-file {
+  background: rgba(72, 187, 120, 0.05);
+  padding: 16px;
+  border-radius: 12px;
+  margin: 8px 0;
+  border-left: 4px solid #48bb78;
+}
+
+.file-icon {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.download-link {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 12px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.download-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(72, 187, 120, 0.3);
+}
+
+/* Education Item Preview Enhancement */
 .education-section {
   margin: 16px 0;
 }

@@ -238,13 +238,41 @@ const DynamicForm = ({ data, setData }) => {
       <h2>Portfolio Builder</h2>
 
       {/* Profile Picture */}
-      <label>Profile Picture URL</label>
-      <input
-        type="url"
-        placeholder="https://example.com/your-photo.jpg"
-        value={data.profilePicture || ""}
-        onChange={(e) => setData({ ...data, profilePicture: e.target.value })}
-      />
+      <div className="file-upload-section">
+        <label>Profile Picture</label>
+        <div className="upload-options">
+          <div className="url-option">
+            <input
+              type="url"
+              placeholder="https://example.com/your-photo.jpg"
+              value={data.profilePicture || ""}
+              onChange={(e) => setData({ ...data, profilePicture: e.target.value })}
+            />
+          </div>
+          <span className="or-divider">OR</span>
+          <div className="file-option">
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => {
+                const file = e.target.files[0];
+                if (file) {
+                  const reader = new FileReader();
+                  reader.onload = (e) => {
+                    setData({ ...data, profilePicture: e.target.result });
+                  };
+                  reader.readAsDataURL(file);
+                }
+              }}
+              className="file-input"
+              id="profile-upload"
+            />
+            <label htmlFor="profile-upload" className="file-upload-btn">
+              📁 Upload Photo
+            </label>
+          </div>
+        </div>
+      </div>
 
       {/* Name */}
       <label>Name</label>
@@ -497,23 +525,76 @@ const DynamicForm = ({ data, setData }) => {
       {/* Certifications */}
       <h3>Certifications</h3>
       {data.certifications?.map((c, i) => (
-        <div key={i} className="dynamic-row">
-          <input
-            value={c}
-            onChange={(e) => handleArrayChange("certifications", i, e.target.value)}
-          />
+        <div key={i} className="certification-row">
+          <div className="cert-content">
+            {c.type === 'text' ? (
+              <input
+                value={c.content || ""}
+                placeholder="Enter certification name"
+                onChange={(e) => {
+                  const updated = [...data.certifications];
+                  updated[i] = { ...updated[i], content: e.target.value };
+                  setData({ ...data, certifications: updated });
+                }}
+              />
+            ) : (
+              <div className="file-display">
+                <span className="file-name">📄 {c.fileName || 'Uploaded File'}</span>
+              </div>
+            )}
+          </div>
           <button type="button" onClick={() => removeItem("certifications", i)}>
             ❌
           </button>
         </div>
       )) || []}
-      <button
-        type="button"
-        className="add-btn"
-        onClick={() => addItem("certifications")}
-      >
-        + Add Certification
-      </button>
+      
+      <div className="add-certification-options">
+        <button
+          type="button"
+          className="add-btn"
+          onClick={() => {
+            const newCert = { type: 'text', content: '' };
+            setData({ 
+              ...data, 
+              certifications: [...(data.certifications || []), newCert] 
+            });
+          }}
+        >
+          ✏️ Add Text Certification
+        </button>
+        
+        <div className="file-upload-wrapper">
+          <input
+            type="file"
+            accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+            onChange={(e) => {
+              const file = e.target.files[0];
+              if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                  const newCert = {
+                    type: 'file',
+                    content: e.target.result,
+                    fileName: file.name,
+                    fileType: file.type
+                  };
+                  setData({
+                    ...data,
+                    certifications: [...(data.certifications || []), newCert]
+                  });
+                };
+                reader.readAsDataURL(file);
+              }
+            }}
+            className="file-input"
+            id="cert-upload"
+          />
+          <label htmlFor="cert-upload" className="add-btn file-upload-btn">
+            📁 Upload Certificate
+          </label>
+        </div>
+      </div>
 
       {/* Languages */}
       <h3>Languages</h3>

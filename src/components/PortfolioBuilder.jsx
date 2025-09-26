@@ -27,7 +27,7 @@ const PortfolioBuilder = () => {
       ]
     },
     skills: [],
-    certifications: [],
+    certifications: [], // Now supports both text and file objects
     languages: [],
     customSections: [],
   });
